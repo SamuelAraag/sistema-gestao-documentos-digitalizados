@@ -1,6 +1,6 @@
 .angular
 .vscode
 
-/dist
+# /dist //permitir subir essa pasta, para disponibilizar como arquivo static gitpages
 /dist-electron
 /node_modules
