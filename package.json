@@ -48,6 +48,9 @@
     "cypress": "latest"
   },
   "build": {
+    "options": {
+      "outputPath": "dist"
+    },
     "appId": "com.seuprojeto.app",
     "productName": "Meu App Electron",
     "files": [
