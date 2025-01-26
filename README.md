@@ -31,10 +31,20 @@ ng generate --help
 To build the project run:
 
 ```bash
-ng build
+ng run build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Create .exe or .dmg
+
+To build the project run:
+
+```bash
+ng run package
+```
+
+This will create a file to install on Windows (if you run on Windows) and MacOS (if you run on Mac)
 
 ## Running unit tests
 

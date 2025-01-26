@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "electron-app": {
+    "sistema-gestao-documentos-digitalizados": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/electron-app",
+            "outputPath": "dist/sistema-gestao-documentos-digitalizados",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "electron-app:build:production"
+              "buildTarget": "sistema-gestao-documentos-digitalizados:build:production"
             },
             "development": {
-              "buildTarget": "electron-app:build:development"
+              "buildTarget": "sistema-gestao-documentos-digitalizados:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,11 +95,60 @@
             ],
             "scripts": []
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "sistema-gestao-documentos-digitalizados:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "sistema-gestao-documentos-digitalizados:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "sistema-gestao-documentos-digitalizados:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "sistema-gestao-documentos-digitalizados:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "sistema-gestao-documentos-digitalizados:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "sistema-gestao-documentos-digitalizados:serve:production"
+            }
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "0e66bf9d-86cb-4640-9972-377cd80bf551"
+    "analytics": "0e66bf9d-86cb-4640-9972-377cd80bf551",
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@schematics/angular"
+    ]
   }
 }
